@@ -20,6 +20,12 @@ class Stack:
            item = self.container[self.topIndex]
            self.topIndex -= 1
            return item
+   def peek(self):
+       if self.isEmpty():
+           print("Stack Underflow! Cannot peek the item in the stack!")
+           return None
+       else:
+           return self.container[self.topIndex]
 
    def isFull(self):
        return self.topIndex == self.size-1
@@ -35,16 +41,7 @@ class Stack:
 
 if __name__ == '__main__':
     s=Stack(5)
-    s.push("A")
-    s.push("B")
-    s.pop()
-    s.push("C")
-    s.push("D")
-    s.pop()
-    s.push("E")
-
-    print("The value of topIndex is "+str(s.getTopIndex()))
-    print(s.getContainer())
+    s.peek()
 
 
 
